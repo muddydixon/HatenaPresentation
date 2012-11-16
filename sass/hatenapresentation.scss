@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Yanone Kaffeesatz Bold'), local('YanoneKaffeesatz-Bold'), url(http://themes.googleusercontent.com/static/fonts/yanonekaffeesatz/v4/We_iSDqttE3etzfdfhuPRUgbSk09ekaEjkXjfj0Ujx8.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Yanone Kaffeesatz';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Yanone Kaffeesatz Regular'), local('YanoneKaffeesatz-Regular'), url(http://themes.googleusercontent.com/static/fonts/yanonekaffeesatz/v4/YDAoLskQQ5MOAgvHUQCcLbvy90DtE_Pg_qiF9bHvTzw.ttf) format('truetype');
+}
+@font-face {
+    font-family: mplus-1p-regular;
+    src: url(http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-light.ttf) format('truetype');
+}
+    
+@mixin slide {
+    position: relative;
+    margin-top: -12px;
+    display: none;
+    height: 80%;
+    width: 90%;
+    margin: 3% auto;
+    padding: 40px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,.5);
+    overflow: hidden;
+    color: #FFF;
+    background: #2D2D2D;
+    
+    font: 36px "Helvetica Neue";
+    font-family: "Yanone Kaffeesatz", "mplus-1p-regular";
+    text-rendering: optimizeLegibility;
+    
+    a {
+        color: inherit;
+        text-decoration: none;
+        display: inline-block;
+        border-bottom: dotted 1px #969696;
+    }
+    
+    &.current {
+        display: block;
+    }
+
+    h1, h2 {
+        font-size: 80pt;
+        padding: 0;
+        margin: 0;
+        &.double {
+            margin-top: 120px;
+        }
+    }
+    h1 {
+        font-size: 120pt;
+    }
+    p {
+        padding: 0;
+        margin: 0;
+        font-size: 40pt;
+    }
+
+    footer {
+        position: fixed;
+        width: 90%;
+        bottom: 0;
+        text-align: right;
+        span {
+            font-size: 5px;
+        }
+    }
+}
+
+div.presentation.prepared {
+    .slide {
+        @include slide
+    }
+    &.current {
+        display: block;
+    }
+
+    pre, code {
+        font-family: "Menlo", monospace;
+    }
+
+    pre {
+        color: #333;
+        padding: 10px;
+        background: #DDD;
+        box-shadow: inset 3px 3px 3px #AAA, 0 0 3px #666;
+        border-radius: 10px;
+        font-size: 40px;
+    }
+    
+
+    .purple,
+    .html .value,
+    .javascript .string,
+    .javascript .regexp {
+        color: #9e9ac8;
+    }
+
+    .blue,
+    .html .tag,
+    .css .tag,
+    .javascript .keyword {
+        color: #6baed6;
+    }
+    
+    .red,
+    .comment {
+        color: #FC7676;
+    }
+    
+    .grey,
+    .comment {
+        color: #969696;
+    }
+
+    .green,
+    .html .doctype,
+    .javascript .number {
+        color: #74c476;
+    }
+    
+    .orange,
+    .html .attribute,
+    .css .attribute,
+    .javascript .class,
+    .javascript .special {
+        color: #fd8d3c;
+    }
+
+    .highlight {
+        background: #636363;
+    }
+
+    .pink {
+        color: #e377c2;
+    }
+
+    .white {
+        color: #fff;
+    }
+
+    .black {
+        color: #333;
+    }
+}
